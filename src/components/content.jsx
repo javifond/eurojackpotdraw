@@ -5,6 +5,7 @@ var Reflux = require('reflux');
 
 var Messages = require('./messages');
 var Numbers = require('./numbers');
+var Picker = require('./picker');
 
 module.exports = React.createClass({
   mixins: [
@@ -24,15 +25,10 @@ module.exports = React.createClass({
     }
     else {
       return <section>
-        <header>
-          <h3>EuroJackpot Results & Winning Numbers</h3>
-          <select>
-            <option>{this.getLastDate()}</option>
-          </select>
-          <select>
-           <option>{this.getLastYear()}</option>
-          </select>
-        </header>
+        <Picker 
+          lastDate={this.getLastDate()} 
+          lastYear={this.getLastYear()}
+        />
         <hr />
         <h4>{this.getLastFullDate()}</h4>
         <hr />
