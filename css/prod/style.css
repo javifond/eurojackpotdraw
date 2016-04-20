@@ -1,0 +1,42 @@
+.date-picker-header {
+  display: flex;
+  align-items: baseline; }
+  .date-picker-header__head {
+    width: 100%; }
+
+.balls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-weight: normal; }
+  .balls__result {
+    background: #FFFFFF;
+    display: inline-block;
+    line-height: 26px;
+    padding: 0;
+    border: 2px solid #CCCCCC;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    position: relative;
+    color: #535353;
+    box-sizing: border-box;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px; }
+    .balls__result--extra {
+      border-color: #815422; }
+
+.date-selector {
+  border: 1px solid #CCCCCC;
+  background: url(http://simpleicon.com/wp-content/uploads/Calendar-Time.png) 96%/12% no-repeat #EEEEEE;
+  width: 20%;
+  margin-right: 0.5em;
+  padding: 0 35px 0px 5px;
+  font-size: 1.2emx;
+  height: 1.8em;
+  appearance: none; }
