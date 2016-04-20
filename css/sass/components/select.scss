@@ -1,0 +1,25 @@
+// Select Component
+// 
+// Styles select html tag for a better look and feel
+// ------------------------------------------------------------------------
+
+// Variables
+// ------------------------------------------------------------------------
+$background-icon: url(http://simpleicon.com/wp-content/uploads/Calendar-Time.png);
+$bg-color: #EEEEEE;
+$border-color: #CCCCCC;
+
+// Block
+// ------------------------------------------------------------------------
+.date-selector {
+  border: 1px solid $border-color;
+  background: $background-icon 96% / 12% no-repeat $bg-color;
+  width: 20%;
+  margin-right: 0.5em;
+  padding: 0 35px 0px 5px;
+  font-size: 1.2emx;
+  height: 1.8em;
+  appearance: none;
+  //TODO: Remove when POSTCSS is installed
+  -webkit-appearance: none;
+}

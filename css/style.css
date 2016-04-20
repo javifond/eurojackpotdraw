@@ -1,3 +1,9 @@
+.date-picker-header {
+  display: flex;
+  align-items: baseline; }
+  .date-picker-header__head {
+    width: 100%; }
+
 .balls {
   list-style: none;
   margin: 0;
@@ -24,3 +30,14 @@
     height: 30px; }
     .balls__result--extra {
       border-color: #815422; }
+
+.date-selector {
+  border: 1px solid #CCCCCC;
+  background: url(http://simpleicon.com/wp-content/uploads/Calendar-Time.png) 96%/15% no-repeat #EEEEEE;
+  width: 20%;
+  margin-right: 0.5em;
+  padding: 0 35px 0px 5px;
+  font-size: 1.2emx;
+  height: 1.8em;
+  appearance: none;
+  -webkit-appearance: none; }
