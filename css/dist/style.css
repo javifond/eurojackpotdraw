@@ -1,6 +1,10 @@
 .date-picker-header {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: baseline; }
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline; }
   .date-picker-header__head {
     width: 100%; }
 
@@ -39,5 +43,6 @@
   padding: 0 35px 0px 5px;
   font-size: 1.2emx;
   height: 1.8em;
-  appearance: none;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }

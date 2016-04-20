@@ -9,6 +9,10 @@ var server = require('gulp-server-livereload');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
+var postcss      = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var cssmin = require('gulp-cssmin');
+var rename = require('gulp-rename');
 
 var notify = function(error) {
   var message = 'In: ';
@@ -75,12 +79,25 @@ gulp.task('serve', function(done) {
 gulp.task('sass', function () {
   gulp.src('css/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('css/style.css'))
+    .pipe(concat('css/prod/style.css'))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('default', ['build', 'serve', 'sass', 'watch']);
+gulp.task('autoprefixer', function () {
+    gulp.src('css/prod/*.css')
+      .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+      .pipe(gulp.dest('css/dist'));
+});
+
+gulp.task('cssmin', function () {
+  gulp.src('css/dist/*.css')
+    .pipe(cssmin())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('css/dist'));
+});
+
+gulp.task('default', ['build', 'sass', 'autoprefixer', 'cssmin', 'serve', 'watch']);
 
 gulp.task('watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('./sass/**/*.scss', ['sass', 'autoprefixer', 'cssmin']);
 });
