@@ -3,12 +3,7 @@ var React = require('react');
 module.exports = React.createClass({
   render: function () {
     return  <table className="table">
-		<thead>
-			<tr>
-				<th>Winners</th>
-				<th>Prize</th>
-			</tr>
-		</thead>
+		<caption>Winners and Prizes</caption>
 		<tbody>
 			{this.getTableRows()}
 		</tbody>
@@ -23,7 +18,7 @@ module.exports = React.createClass({
 
 	for(rank in odds) {
 		tr.push(
-			<tr>
+			<tr className="text-right">
 				<td className="text-muted">{odds[rank].winners}x</td>
 				<td>€{odds[rank].prize.toLocaleString()}</td>
 			</tr>
