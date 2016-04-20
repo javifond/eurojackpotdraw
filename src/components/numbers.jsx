@@ -8,18 +8,20 @@ module.exports = React.createClass({
 
 	for (i = 0; i < this.props.numbers.length; i++) {
 		winnerNumbers.push(
-			<span className="badge">{this.props.numbers[i]}</span>
+			<li className="balls balls__result">{this.props.numbers[i]}</li>
 		);
 	}
 
 	for (j = 0; j < this.props.euroNumbers.length; j++) {
 		winnerNumbers.push(
-			<span className="badge">{this.props.euroNumbers[j]}</span>
+			<li className="balls balls__result balls__result--extra">{this.props.euroNumbers[j]}</li>
 		);
 	}
 
     return <section>
-    	{winnerNumbers}
+    	<ul className="balls">
+    		{winnerNumbers}
+    	</ul>
     </section>
   }
 });

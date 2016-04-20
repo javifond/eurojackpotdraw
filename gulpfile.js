@@ -46,7 +46,7 @@ function bundle() {
   return bundler
     .bundle()
     .on('error', notify)
-    .pipe(source('main.js'))
+    .pipe(source('js/main.js'))
     .pipe(gulp.dest('./'))
 }
 bundler.on('update', bundle)
@@ -73,9 +73,9 @@ gulp.task('serve', function(done) {
 });
 
 gulp.task('sass', function () {
-  gulp.src('./sass/**/*.scss')
+  gulp.src('css/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('style.css'))
+    .pipe(concat('css/style.css'))
     .pipe(gulp.dest('./'));
 });
 
