@@ -1,0 +1,26 @@
+.balls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-weight: normal; }
+  .balls__result {
+    background: #FFFFFF;
+    display: inline-block;
+    line-height: 26px;
+    padding: 0;
+    border: 2px solid #CCCCCC;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    position: relative;
+    color: #535353;
+    box-sizing: border-box;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px; }
+    .balls__result--extra {
+      border-color: #815422; }
