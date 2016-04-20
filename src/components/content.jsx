@@ -6,6 +6,7 @@ var Reflux = require('reflux');
 var Messages = require('./messages');
 var Numbers = require('./numbers');
 var Picker = require('./picker');
+var Odds = require('./odds');
 
 module.exports = React.createClass({
   mixins: [
@@ -36,7 +37,9 @@ module.exports = React.createClass({
           numbers={this.getNumbers()} 
           euroNumbers={this.getEuroNumbers()}
         />
-
+        <Odds
+          odds={this.getOdds()} 
+        />
         <hr />
         <Messages 
           lastClosingDate={this.getLastClosingDate()[0]} 
@@ -77,6 +80,9 @@ module.exports = React.createClass({
   },
   getEuroNumbers: function () {
     return this.state.draw.last.euroNumbers;
+  },
+  getOdds: function () {
+    return this.state.draw.last.odds;
   },
   onChange: function(event, draw) {
     this.setState({
