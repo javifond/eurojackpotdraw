@@ -1,0 +1,60 @@
+// ------------------------------------------------------------------------
+// Winner Numbers Component
+// 
+// Description: This component will show winning result numners and extra
+// numbers in an unordered list horizontally displayed.
+// ------------------------------------------------------------------------
+ 
+// Variables
+// ------------------------------------------------------------------------
+$default-bg-color: #FFFFFF;
+$default-border-color: #CCCCCC;
+$extra-border-color: #815422;
+$default-border: 2px solid $default-border-color;
+$normal-ball-color: #535353;
+$ball-size: 30px;
+
+// Mixins
+// ------------------------------------------------------------------------
+@mixin balls-size ($size) {
+	border-radius: $size;
+	width: $size;
+	height: $size;
+};
+
+// Block
+// ------------------------------------------------------------------------
+.balls {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	position: relative;
+	font-family: Arial, sans-serif;
+	font-weight: normal;
+
+	// Elements
+    // --------------------------------------------------------------------
+    &__result {
+		background: $default-bg-color;
+		display: inline-block;
+		line-height: 26px;
+		padding: 0;
+		border: $default-border;
+		text-align: center;
+		font-size: 16px;
+		margin-right: 6px;
+		margin-bottom: 6px;
+		position: relative;
+		color: $normal-ball-color;
+		box-sizing: border-box;
+
+		@include balls-size($ball-size);
+
+		//Modifiers
+		// --------------------------------------------------------------------
+		&--extra {
+			border-color: $extra-border-color;
+		}
+    }
+}
